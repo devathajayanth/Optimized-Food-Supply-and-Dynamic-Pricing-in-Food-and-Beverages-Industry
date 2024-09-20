@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Forecast For Next Week</h1>
+        <nav>
+            
+<a href="/home">Dashboard</a>
+            <a href="/forecast">Forecast Demand</a>
+            <a href="/dynamic_pricing">Dynamic Pricing</a>
+            <a href="/patterns">Purchasing Patterns</a>
+            <a href="/sales_ratio">Sales Ratio</a>
+            <a href="/revenue">Forecast Revenue</a>
+            <a href="/most_demanded">Most Demanded Items</a>
+            <a href="/visualizations">Visualizations</a>
+<a href="/">Logout</a>
+        </nav>
+    </header>
+<main>
+  <div class="container">
+    <h2>Forecast for Items</h2>
+    {% for item, data in forecasts.items() %}
+      <h3>{{ item }}</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Forecast Quantity</th>
+            <th>Forecast Orders</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in data %}
+            <tr>
+              <td>{{ row[0].strftime('%Y-%m-%d') }}</td> <!-- Format date here -->
+              <td>{{ row[2] }}</td>
+              <td>{{ row[1] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endfor %}
+   
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchasing Patterns</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Purchasing Patterns</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/forecast">Forecast Demand</a>
+            <a href="/dynamic_pricing">Dynamic Pricing</a>
+            <a href="/patterns">Purchasing Patterns</a>
+            <a href="/sales_ratio">Sales Ratio</a>
+            <a href="/revenue">Forecast Revenue</a>
+            <a href="/most_demanded">Most Demanded Items</a>
+        </nav>
+        </header>
+        <table class="pattern-table">
+            <tr>
+                <th>Gender</th>
+                <th>Occupation</th>
+                <th>Most Purchased Item</th>
+            </tr>
+            {% for pattern, item in patterns.items() %}
+                <tr>
+                    <td>{{ pattern[0] }}</td>
+                    <td>{{ pattern[1] }}</td>
+                    <td>{{ item }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

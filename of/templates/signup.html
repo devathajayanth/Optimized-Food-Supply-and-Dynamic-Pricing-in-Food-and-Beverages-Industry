@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Signup</title>
+    <style>
+        .success-alert {
+            color: green;
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Predictive Analytics and Dynamic Pricing in Food and Beverages Industry.</h1></center>
+    <div class="container">
+        <center><h2>Signup</h2></center>
+        <!-- Success alert message div -->
+        <div id="success-alert" class="success-alert">Thank you for registering! We will get back to you soon.</div>
+        <form method="POST" action="/signup" onsubmit="return showSuccessMessage()">
+            <label for="restaurant_name">Restaurant Name:</label>
+            <input type="text" id="restaurant_name" name="restaurant_name" required><br>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required><br>
+            <label for="mobile_number">Mobile Number:</label>
+            <input type="text" id="mobile_number" name="mobile_number" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+    <script>
+        function showSuccessMessage() {
+            // Show the success alert
+            document.getElementById("success-alert").style.display = "block";
+
+     
+            return false;
+        }
+    </script>
+</body>
+</html>

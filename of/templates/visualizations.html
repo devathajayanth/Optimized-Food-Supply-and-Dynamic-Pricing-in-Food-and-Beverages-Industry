@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function showImage() {
+            const selectedImage = document.getElementById("visualization").value;
+            const imageContainer = document.getElementById("imageContainer");
+            if (selectedImage) {
+                imageContainer.innerHTML = `<img src="${selectedImage}" alt="Visualization" class="visualization-image">`;
+            } else {
+                imageContainer.innerHTML = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Visualizations</h1>
+        </div>
+        <nav>
+           
+<a href="/home">Dashboard</a>
+            <a href="/forecast">Forecast Demand</a>
+            <a href="/dynamic_pricing">Dynamic Pricing</a>
+            <a href="/patterns">Purchasing Patterns</a>
+            <a href="/sales_ratio">Sales Ratio</a>
+            <a href="/revenue">Forecast Revenue</a>
+            <a href="/most_demanded">Most Demanded Items</a>
+            <a href="/visualizations">Visualizations</a>
+<a href="/">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Select a Visualization</h2>
+            <label for="visualization">Choose a visualization:</label>
+            <select id="visualization" onchange="showImage()">
+                <option value="">Select an image</option>
+                <option value="static/images/sales_by_occupation.png">Sales by Occupation</option>
+                <option value="static/images/sales_by_time_of_day.png">Sales by Time of Day</option>
+                <option value="static/images/sales_heatmap.png">Sales Heatmap</option>
+                <option value="static/images/sales_over_time.png">Sales Over Time</option>
+                <option value="static/images/time_series_Aloo Gobi.png">Time Series Aloo Gobi</option>
+                <option value="static/images/time_series_Aloo Tikka.png">Time Series Aloo Tikka</option>
+                <option value="static/images/time_series_analysis.png">Time Series Analysis</option>
+                <option value="static/images/time_series_Bonda.png">Time Series Bonda</option>
+                <option value="static/images/time_series_Butter Chicken.png">Time Series Butter Chicken</option>
+                <option value="static/images/time_series_Butter Milk.png">Time Series Butter Milk</option>
+                <option value="static/images/time_series_Butter Naan.png">Time Series Butter Naan</option>
+                <option value="static/images/time_series_Chicken 65 Biryani.png">Time Series Chicken 65 Biryani</option>
+                <option value="static/images/time_series_Chicken Biryani.png">Time Series Chicken Biryani</option>
+                <option value="static/images/time_series_Chicken Manchurian.png">Time Series Chicken Manchurian</option>
+                <option value="static/images/time_series_Chicken Noodles.png">Time Series Chicken Noodles</option>
+                <option value="static/images/time_series_Chicken Soup.png">Time Series Chicken Soup</option>
+                <option value="static/images/time_series_Chicken Tikka.png">Time Series Chicken Tikka</option>
+                <option value="static/images/time_series_Chili Paneer.png">Time Series Chili Paneer</option>
+                <option value="static/images/time_series_Corn Soup.png">Time Series Corn Soup</option>
+                <option value="static/images/time_series_Dal Tadka.png">Time Series Dal Tadka</option>
+                <option value="static/images/time_series_Dosa.png">Time Series Dosa</option>
+                <option value="static/images/time_series_Fruit Juice.png">Time Series Fruit Juice</option>
+                <option value="static/images/time_series_Idly.png">Time Series Idly</option>
+                <option value="static/images/time_series_Lassi.png">Time Series Lassi</option>
+                <option value="static/images/time_series_Milkshake.png">Time Series Milkshake</option>
+                <option value="static/images/time_series_Mutton Biryani.png">Time Series Mutton Biryani</option>
+                <option value="static/images/time_series_Mutton Shami Kebab.png">Time Series Mutton Shami Kebab</option>
+                <option value="static/images/time_series_Mutton Soup.png">Time Series Mutton Soup</option>
+                <option value="static/images/time_series_Palak Paneer.png">Time Series Palak Paneer</option>
+                <option value="static/images/time_series_Paneer Biryani.png">Time Series Paneer Biryani</option>
+                <option value="static/images/time_series_Paneer Tikka.png">Time Series Paneer Tikka</option>
+                <option value="static/images/time_series_Pasta.png">Time Series Pasta</option>
+                <option value="static/images/time_series_Pongal.png">Time Series Pongal</option>
+                <option value="static/images/time_series_Rogan Josh.png">Time Series Rogan Josh</option>
+                <option value="static/images/time_series_Roti.png">Time Series Roti</option>
+                <option value="static/images/time_series_Softdrink.png">Time Series Softdrink</option>
+                <option value="static/images/time_series_Tandoori Chicken.png">Time Series Tandoori Chicken</option>
+                <option value="static/images/time_series_Tandoori Prawns.png">Time Series Tandoori Prawns</option>
+                <option value="static/images/time_series_Tomato Soup.png">Time Series Tomato Soup</option>
+                <option value="static/images/time_series_Upma.png">Time Series Upma</option>
+                <option value="static/images/time_series_Vada.png">Time Series Vada</option>
+                <option value="static/images/time_series_Veg Manchurian.png">Time Series Veg Manchurian</option>
+                <option value="static/images/time_series_Veg Noodles.png">Time Series Veg Noodles</option>
+                <option value="static/images/time_series_Vegetable Biryani.png">Time Series Vegetable Biryani</option>
+                <option value="static/images/total_sales_each_item.png">Total Sales Each Item</option>
+                <option value="static/images/veg_nonveg_pie_chart.png">Veg Non-Veg Pie Chart</option>
+                <option value="static/images/average_price_per_item.png">Average Price Per Item</option>
+                <option value="static/images/quantity_ordered_item_type.png">Quantity Ordered Item Type</option>
+                <option value="static/images/sales_by_gender.png">Sales by Gender</option>
+            </select>
+            <div id="imageContainer" class="image-container"></div>
+        </div>
+    </main>
+</body>
+</html>

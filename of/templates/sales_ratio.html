@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sales Ratio</h1>
+        <nav>
+           
+<a href="/home">Dashboard</a>
+            <a href="/forecast">Forecast Demand</a>
+            <a href="/dynamic_pricing">Dynamic Pricing</a>
+            <a href="/patterns">Purchasing Patterns</a>
+            <a href="/sales_ratio">Sales Ratio</a>
+            <a href="/revenue">Forecast Revenue</a>
+            <a href="/most_demanded">Most Demanded Items</a>
+            <a href="/visualizations">Visualizations</a>
+<a href="/">Logout</a>
+        </nav>
+    </header>
+<main>
+  <div class="container">
+    <div class="sales-ratio">
+      <p>Veg: {{ veg_ratio * 100 }}%</p>
+      <p>Non-Veg: {{ non_veg_ratio * 100 }}%</p>
+    </div>
+    
+  </div>
+</main>
+</body>
+</html>

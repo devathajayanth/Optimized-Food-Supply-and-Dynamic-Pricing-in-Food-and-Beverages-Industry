@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login</title>
+    <style>
+        .alert {
+            color: red;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Predictive Analytics and Dynamic Pricing in Food and Beverages Industry.</h1></center>
+    <div class="container">
+        <center><h2>Login</h2></center>
+        <!-- Alert message div -->
+        <div id="alert" class="alert">User ID or Password is incorrect. Please try again.</div>
+        <form method="POST" action="/" onsubmit="return checkLogin()">
+            <label for="userid">User ID:</label>
+            <input type="text" id="userid" name="userid" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <br>
+        <center><a href="/signup">Signup here</a></center>
+    </div>
+    <script>
+        // JavaScript function to simulate login validation
+        function checkLogin() {
+            // Example values for validation (you can replace this with real validation logic)
+            var validUserId = "admin";
+            var validPassword = "admin";
+            
+            var userId = document.getElementById("userid").value;
+            var password = document.getElementById("password").value;
+
+            // Check if user ID or password is incorrect
+            if (userId !== validUserId || password !== validPassword) {
+                document.getElementById("alert").style.display = "block";
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>

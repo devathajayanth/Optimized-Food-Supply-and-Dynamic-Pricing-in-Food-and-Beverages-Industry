@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Santosh Restaurant Data Dashboard</h1>
+        <nav>
+      
+            <a href="/home">Dashboard</a>
+            <a href="/forecast">Forecast Demand</a>
+            <a href="/dynamic_pricing">Dynamic Pricing</a>
+            <a href="/patterns">Purchasing Patterns</a>
+            <a href="/sales_ratio">Sales Ratio</a>
+            <a href="/revenue">Forecast Revenue</a>
+            <a href="/most_demanded">Most Demanded Items</a>
+            <a href="/visualizations">Visualizations</a>
+<a href="/">Logout</a>
+            
+        </nav>
+    </header>
+<main>
+    <div class="container">
+        <h2>Overview</h2>
+        <p>Total Customers: {{ total_customers }}</p>
+        <p>Total Orders: {{ total_orders }}</p>
+        <p>Total Revenue: ₹{{ total_revenue }}</p>
+        
+        <h2>Top 10 Most Visited Customers</h2>
+        <table>
+            <tr>
+                <th>Customer ID</th>
+                <th>Number of Visits</th>
+            </tr>
+            {% for customer in top_customers.itertuples() %}
+            <tr>
+                <td>{{ customer._1 }}</td>
+                <td>{{ customer._2 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</main>
+</body>
+</html>
